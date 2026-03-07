@@ -12,7 +12,7 @@ export const uploadMasterDataController = async (req, res) => {
                 message: "No file uploaded",
             });
         }
-        const workbook = XLSX.readFile(req.file.path);
+        const workbook = XLSX.read(req.file.buffer, { type: "buffer" });
         const sheetName = workbook.SheetNames[0];
         const sheetData = XLSX.utils.sheet_to_json(
             workbook.Sheets[sheetName]
