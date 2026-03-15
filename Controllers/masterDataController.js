@@ -179,7 +179,7 @@ export const deleteAllMasterData = async (req, res) => {
     }
 };
 
-export const addMasterData = async (req, res) => {
+export const addMasterBillData = async (req, res) => {
   try {
     const newUser = new Bill(req.body);
 
