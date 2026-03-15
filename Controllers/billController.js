@@ -79,7 +79,7 @@ export const deleteAllSitiMaster = async (req, res) => {
 
 export const addMasterData = async (req, res) => {
   try {
-    const newUser = new Bill(req.body);
+    const newUser = new SitiMaster(req.body);
 
     const savedUser = await newUser.save();
 
