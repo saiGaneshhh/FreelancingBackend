@@ -76,3 +76,23 @@ export const deleteAllSitiMaster = async (req, res) => {
     res.status(500).json({ message: "Error deleting all data" });
   }
 };
+
+export const addMasterData = async (req, res) => {
+  try {
+    const newUser = new Bill(req.body);
+
+    const savedUser = await newUser.save();
+
+    res.status(201).json({
+      message: "User added successfully",
+      data: savedUser
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Error adding master data"
+    });
+  }
+};
