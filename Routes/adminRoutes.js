@@ -21,9 +21,9 @@ import {
   updateAllMasterData,
   deleteMasterDataById,
   deleteAllMasterData,
-  addMasterData
+  addMasterBillData
 } from "../Controllers/masterDataController.js";
-import { deleteAllSitiMaster, deleteSitiMasterById, getAllSitiMaster, getSitiMasterById, updateSitiMasterById } from "../Controllers/billController.js";
+import { deleteAllSitiMaster, deleteSitiMasterById, getAllSitiMaster, getSitiMasterById, updateSitiMasterById,addMasterData } from "../Controllers/billController.js";
 import { uploadSitiMasterController } from "../Controllers/uploadSitiMasterController.js";
 // import {
 //   uploadSitiMasterController,
@@ -62,7 +62,7 @@ router.put("/master-data/:id", updateMasterDataById);
 router.put("/master-data", updateAllMasterData);
 router.delete("/master-data/:id", deleteMasterDataById);
 router.delete("/master-data", deleteAllMasterData);
-router.post("/add-master-data", addMasterData);
+router.post("/add-master-data", addMasterBillData);
 // ========== GET CUSTOMER ==========
 router.get("/customer/:vcNumber", getCustomerByVC);
 // Upload
@@ -74,4 +74,5 @@ router.get("/siti-master/:id", getSitiMasterById);
 router.put("/siti-master/:id", updateSitiMasterById);
 router.delete("/siti-master/:id", deleteSitiMasterById);
 router.delete("/siti-master", deleteAllSitiMaster);
+router.post("/add-site-master-data", addMasterData);
 export default router;
